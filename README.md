@@ -17,5 +17,9 @@ To analyze, Goodcabs performance data & provide actionable insight to improve re
  - Total Trip Analysis( Weekday/ weekend)
  - Repeat Passenger Rate%
  - Revenue & Trip top & bottom 3 cities
-   
+
+  ![image alt](https://github.com/sanu-9/Goodcabs_Analysis/blob/a5bf4cb896bf96688285a0c9ba8aeb9ef18fad1f/datasets/Screenshot%20(146).png?raw=true)
+
+3. **Passenger Analysis**
+ - 
 
