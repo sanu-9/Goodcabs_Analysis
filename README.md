@@ -45,3 +45,9 @@ To analyze, Goodcabs performance data & provide actionable insight to improve re
 - Discount for repeat passenger.
 - Enhance service quality & driver behaviour to increase passenger ratings.
 
+### Contact Imformation
+- Sonali Gaikwad
+- Linkedin [www.linkedin.com/in/
+sonali-gaikwad-883107309]
+
+
