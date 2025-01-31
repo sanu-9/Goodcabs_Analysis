@@ -26,28 +26,27 @@ To analyze, Goodcabs performance data & provide actionable insight to improve re
  ![image alt](https://github.com/sanu-9/Goodcabs_Analysis/blob/ef294cdb895500a45c9effc1c92b83baa6315022/datasets/Screenshot%20(147).png?raw=true)
 
 ### SQL Reports
-- Address business queries from ad-hoc-requests.pdf using sql to generate real time reports & insights needed for the Chief of Operation.
+- Address business queries from ad-hoc-requests.pdf using SQL to generate real-time reports & insights needed for the Chief of Operation.
 
 ### Key Insights
-- Jaipur city generated highest revenue i.e. 37.21M with highest contribution rate & lowest repeat passenger rate i.e. 17.43%.
-- jaipur, Lucknow, and Surat top 3 cities by trip volume while Mysore & Coimbatore lowest.
+- Jaipur City generated the highest revenue i.e. 37.21M with the highest contribution rate & lowest repeat passenger rate i.e. 17.43%.
+- Jaipur, Lucknow, and Surat top 3 cities by trip volume while Mysore & Coimbatore lowest.
 - Surat has the highest repeat passenger rate (42.63%) while Mysore has the lowest (11.23%)
-- Lucknow, Surat, and Jaipur are the top performing weekday cities.
-- Jaipur, Kochi, and Indore are the top performing weekend cities.
-- May month have the highest no of repeat passenger rate i.e. 33.47%.
-- Most revenue generated on Weekends.
+- Lucknow, Surat, and Jaipur are the top-performing weekday cities.
+- Jaipur, Kochi, and Indore are the top-performing weekend cities.
+- A may month has the highest no of repeat passenger rate i.e. 33.47%.
+- Most revenue is generated on Weekends.
 
 ### Recommendation
-- Focus on top trip volume cities like Lucknow, Surat.
-- Focus on high demand period to generate more revenue.
-- Keep rewards for achieving targets to employee.
-- Collaborate with hotels, event organizers can be beneficial for increase trip volume.
-- Discount for repeat passenger.
-- Enhance service quality & driver behaviour to increase passenger ratings.
+- Focus on top trip volume cities like Lucknow, and Surat.
+- Focus on the high-demand period to generate more revenue.
+- Keep rewards for achieving targets to employees.
+- Collaborating with hotels, and event organizers can be beneficial for increasing trip volume.
+- Discount for repeat passengers.
+- Enhance service quality & driver behavior to increase passenger ratings.
 
 ### Contact Imformation
 - Sonali Gaikwad
-- Linkedin [www.linkedin.com/in/
-sonali-gaikwad-883107309]
-
+- Linkedin [www.linkedin.com/in/]
+- Email [sonaliamrale0999@gmail.com]
 
