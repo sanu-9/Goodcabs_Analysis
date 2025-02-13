@@ -120,48 +120,39 @@ SELECT
     -------------------------------------------------------------------------------------------------------------------
 -- BUSINESS REQUEST : Idedntify month with highest revenue for  each city
 
-CREATE VIEW city_profi AS
-SELECT
-	f.city_id,f.date,
-	c.city_name,
-    sum(f.fare_amount) as revenue
-    
-FROM 
-	fact_trips f
-JOIN 
-	dim_city c ON c.city_id = f.city_id
-GROUP BY  
-	c.city_name,
-	f.date,
-    f.city_id;
+WITH cte AS (
+    SELECT 
+	city_id, 
+	MONTHNAME(date) AS highest_revenue_month,
+	SUM(fare_amount) AS revenue
+    FROM fact_trips 
+    GROUP BY city_id, MONTHNAME(date)
+),
+ranked_revenue AS (
+    SELECT 
+	city_id, 
+	highest_revenue_month, 
+	revenue,
+	ROW_NUMBER() OVER (PARTITION BY city_id ORDER BY revenue DESC) AS revenue_rank
+    FROM cte
+),
+total_revenue AS (
+    SELECT 
+	city_id, 
+	SUM(revenue) AS total_city_revenue
+    FROM cte
+    GROUP BY city_id)
+SELECT 
+    c.city_name, 
+    r.highest_revenue_month , 
+    r.revenue,
+    ROUND((r.revenue / t.total_city_revenue) * 100, 2) AS pct_contribution
+FROM ranked_revenue r
+JOIN dim_city c ON r.city_id = c.city_id
+JOIN total_revenue t ON r.city_id = t.city_id
+WHERE r.revenue_rank = 1;
 
-CREATE VIEW city_profi_detail AS
-SELECT*,
-	MAX(revenue) OVER(partition by city_id) as max_rev,
-	SUM(revenue) OVER(partition by city_id) as total_city_rev
-FROM 
-	city_profi;
-    
-CREATE VIEW city_highest_profi_month AS
-SELECT
-	distinct city_name, 
-    max_rev,
-    date_format(date, '%M') as highest_revenue_month,
-    total_city_rev,
-    ROUND( (max_rev / total_city_rev) *100, 2) as revenue_contribution
-FROM 
-	city_profi_detail
-WHERE
-	revenue = max_rev;
-    
-SELECT
-	city_name,
-    highest_revenue_month,
-    max_rev AS revenue,
-    revenue_contribution as pct_contribution
-FROM 
-	city_highest_profi_month;
-    
+
     
     --------------------------------------------------------------------------------------------------------------
 -- BUSINESS REQUEST - repeat passenger rate analysis
